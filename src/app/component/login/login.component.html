@@ -1,0 +1,31 @@
+<div class="background">
+  <h1 style="text-align:center">
+      Angular Login Example
+    </h1>
+    <div class="login">
+      <h2 class="login-header">Log in</h2>
+      <form [formGroup]="loginForm" class="login-container" (ngSubmit)="login()">
+    
+        <p [ngClass]="{ 'has-error': isSubmitted }">
+          <input type="email" placeholder="Email" formControlName="email">
+        </p>
+    
+        <div *ngIf="isSubmitted" class="help-block">
+          <div *ngIf="formControls.email.errors.required">Email is required</div>
+        </div>
+    
+        <p [ngClass]="{ 'has-error': isSubmitted }">
+          <input type="password" placeholder="Password" formControlName="password">
+        </p>
+    
+        <div *ngIf="isSubmitted" class="help-block">
+          <div *ngIf="formControls.password.errors.required">Password is required</div>
+        </div>
+    
+        <p>
+          <input type="submit" value="Log in">
+        </p>
+       For Sign Up <a routerLink="/signUp" routerLinkActive="active">Click Here</a>
+      </form>
+  </div>
+  </div>

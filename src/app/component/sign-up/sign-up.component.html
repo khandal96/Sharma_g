@@ -1,0 +1,90 @@
+<form #userSignup = "ngForm"  (ngSubmit) = "signUp()" >
+<div class="container register-form">
+  <div class="form">
+    <div class="note">
+      <p>This is a simpleRegister Form made using Boostrap.</p>
+    </div>
+    <div class="form-content">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" placeholder="Your Name *" id="name" required
+              [(ngModel)]="formData.name" name="name" #name="ngModel">
+
+            <div *ngIf="name.invalid && (name.dirty || name.touched)">
+
+              <div *ngIf="name.errors.required">
+                Name is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="name">Email</label>
+            <input type="email" class="form-control" placeholder="Your Email *" id="email" required
+              [(ngModel)]="formData.email" name="name" #email="ngModel">
+
+            <div *ngIf="email.invalid && (email.dirty || email.touched)">
+
+              <div *ngIf="email.errors.required">
+                Email is required.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" placeholder="Your Password *" id="password" required
+              [(ngModel)]="formData.password" name="password" #password="ngModel">
+
+            <div *ngIf="password.invalid && (password.dirty || password.touched)">
+
+              <div *ngIf="password.errors.required">
+                Password is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="name">Confirm Password</label>
+            <input type="text" class="form-control" placeholder="Confirm Password *" id="cPassword" required
+              [(ngModel)]="formData.cPassword" name="cPassword" #cPassword="ngModel">
+
+            <div *ngIf="cPassword.invalid && (cPassword.dirty || cPassword.touched)">
+
+              <div *ngIf="cPassword.errors.required">
+                Confirm Password is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+              <label for="name">Contact Number</label>
+              <input type="text" class="form-control" placeholder="contactNumber *" id="contactNumber" required
+                [(ngModel)]="formData.contactNumber" name="contactNumber" #contactNumber="ngModel">
+  
+              <div *ngIf="contactNumber.invalid && (contactNumber.dirty || contactNumber.touched)">
+  
+                <div *ngIf="contactNumber.errors.required">
+                  Contact Number is required.
+                </div>
+              </div>
+            </div>
+            <!-- <div class="form-group">
+                <label for="name">Confirm Password</label>
+                <input type="text" class="form-control" placeholder="Confirm Password *" id="cPassword" required
+                  [(ngModel)]="formData.cPassword" name="cPassword" #cPassword="ngModel">
+    
+                <div *ngIf="cPassword.invalid && (cPassword.dirty || cPassword.touched)">
+    
+                  <div *ngIf="cPassword.errors.required">
+                    Confirm Password is required.
+                  </div>
+                </div>
+              </div> -->
+        </div>
+      </div>
+      <button type="submit" [disabled] = "!userSignup.valid" class="btnSubmit">Submit</button>
+    </div>
+  </div>
+</div>
+</form>
